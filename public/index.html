@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <title>Ajax with Js</title>
+
+    <script>
+        // The Request
+        var xhr = new XMLHttpRequest();
+        // Callback
+        // Sets a function that runs each time there is a change in the Ajax request
+        xhr.onreadystatechange = function () {
+            // Checks to see if readyState equals 4 meaning we have received the response back
+            if (xhr.readyState === 4) {
+                // Gets element by id, in this case the id is Ajax from the div in the body.
+                document.getElementById('ajax').innerHTML = xhr.responseText;
+            }
+
+        };
+        // Open a Request - Prepares the browser for sending the request
+        // Give the function two pieces of information 
+        // First is the Http method ('GET', 'POST', 'PUT' or 'DELETE')
+        // Second is the URL this is where the request is going, could point to a file or a server side program.
+        xhr.open('GET', 'sidebar.html');
+
+        // Sending the Request
+        // As we are only requesting the html this is all that is needed
+        // If we were sending info from a form then we would enter the details in the send function
+        xhr.send()
+    </script>
+</head>
+<body>
+<div class="grid-container centered">
+    <div class="grid-100">
+        <div class="contained">
+            <div class="grid-100">
+                <div class="heading">
+                    <h1>Bring on Ajax</h1>
+                </div>
+                <div id="ajax">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/app.css">
+  <title>AJAX with JavaScript</title>
+  <script>
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'sidebar.html');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      document.getElementById('ajax').innerHTML = xhr.responseText;
+    }
+  };
+
+  function sendAJAX() {
+    xhr.send();
+    document.getElementById('load').style.display = 'none';
+  }
+  </script>
+</head>
+<body>
+  <div class="grid-container centered">
+    <div class="grid-100">
+      <div class="contained">
+        <div class="grid-100">
+          <div class="heading">
+            <h1>Bring on the AJAX</h1>
+          </div>
+          <button id="load" onclick="sendAJAX()" class="button">Bring it!</button>
+          <ul id="ajax">
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html> -->
