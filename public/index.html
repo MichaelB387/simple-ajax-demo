@@ -60,8 +60,9 @@
   <script>
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'sidebar.html');
-  //                       This is the callback function
+  //    This is the callback function
   xhr.onreadystatechange = function () {
+    // readyState has condtion of 0 - 4 once condition is equal to 4 then the web server has sent everything it is oging to send
     if (xhr.readyState === 4) {
       document.getElementById('ajax').innerHTML = xhr.responseText;
     }
