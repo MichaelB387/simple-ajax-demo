@@ -60,6 +60,7 @@
   <script>
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'sidebar.html');
+  //                       This is the callback function
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
       document.getElementById('ajax').innerHTML = xhr.responseText;
